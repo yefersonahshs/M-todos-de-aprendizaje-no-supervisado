@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Datos simulados de rutas y estaciones sin una etiqueta (sin variable objetivo)
+data = {
+    'estacion_origen': ['A', 'A', 'B', 'B', 'C', 'D'],
+    'estacion_destino': ['B', 'C', 'C', 'D', 'D', 'E'],
+    'distancia_km': [3, 8, 2, 5, 3, 4],
+    'tiempo_minutos': [10, 15, 8, 12, 6, 10],
+    'capacidad_pasajeros': [120, 200, 140, 100, 180, 160],
+    'frecuencia_viajes': [30, 20, 25, 15, 18, 22]  # Viajes por hora
+}
+
+# Creación de un DataFrame
+df = pd.DataFrame(data)
+
+# Ver el dataset
+print(df)
