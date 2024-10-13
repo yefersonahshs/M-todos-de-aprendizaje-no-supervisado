@@ -1,0 +1,19 @@
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Seleccionar características numéricas
+X = df[['distancia_km', 'tiempo_minutos', 'capacidad_pasajeros']]
+
+# Crear el modelo de K-Means con 3 clusters (por ejemplo)
+kmeans = KMeans(n_clusters=3, random_state=42)
+
+# Ajustar el modelo a los datos
+kmeans.fit(X)
+
+# Obtener las etiquetas de los clusters
+df['cluster'] = kmeans.labels_
+
+# Visualizar los clusters formados
+sns.pairplot(df, hue='cluster', vars=['distancia_km', 'tiempo_minutos', 'capacidad_pasajeros'])
+plt.show()
